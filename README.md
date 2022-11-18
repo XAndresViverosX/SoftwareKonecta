@@ -9,6 +9,7 @@ Proyecto el cual se hizo para la prueba tecnica de PHP en Konecta.
 
 ## Puntos a tener en cuenta
 
+- Tener instalado la ultima version de XAMPP: **8.1.10 (PHP 8.1.10)**.
 - Dependiendo del PC hay que modificar el archivo **php.ini** ubicado en ***C:\xampp\php\php.ini*** agregando la linea **extension=php_intl.dll** o quitandole el punto y coma (**;**) para no tener problemas en la ejecucion del Proyecto.
 - El nombre de la Base de Datos es: **BDKonecta**.
 - Formato BD: ***utf8mb4_general_ci***.
