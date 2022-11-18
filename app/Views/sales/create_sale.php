@@ -47,8 +47,20 @@ crossorigin="anonymous"></script>
 <center>
 <strong><h2>REGISTRO DE VENTAS</h2></strong>
     <br>
-    <form class="d-flex" role="search" style="width: 90%;">
-        <input name="ID" id="ID" class="form-control me-2" type="search" placeholder="Indique el ID del Producto" aria-label="Search">
-        <input name="Cant" id="Cant" class="form-control me-2" type="number" placeholder="Ingrese la Cantidad" aria-label="Search">
-        <a href="<?=base_url('/')?>" class="btn btn-outline-success" type="submit">Buscar</a>
-      </form>
+    <form method="post" style="width: 90%;" action="<?=site_url('/save_sales')?>" enctype="multipart/form-data">
+        <input name="ID" id="ID" class="form-control me-2" type="number" placeholder="Indique el ID del Producto">
+        <br>
+        <input name="Cant" id="Cant" class="form-control me-2" type="number" placeholder="Ingrese la Cantidad">
+      <br>
+            <select id="MethodPay" name="MethodPay" class="form-select" aria-label="Default select example" style="width:30%">
+              <option selected>Seleccione medio de pago</option>
+              <option value="Efectivo">Efectivo</option>
+              <option value="TarjetaC">Tarjeta de Credito</option>
+              <option value="TarjetaD">Tarjeta de Debito</option>
+              <option value="PSE">PSE</option>
+            </select>
+            <br>
+            <button type="submit" class="btn btn-success">REALIZAR VENTA</button>
+            <a href="<?=base_url('/')?>" class="btn btn-danger">CANCELAR VENTA</a>
+            </form>
+            </center>

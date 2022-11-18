@@ -64,4 +64,5 @@ $routes->get('delete/(:num)', 'CtrProduct::delete/$1');
 $routes->get('idpro/(:num)', 'CtrSale::traerID/$1');
 //posts
 $routes->post('save', 'CtrProduct::save');
+$routes->post('save_sales', 'CtrSale::save_sales');
 $routes->post('update', 'CtrProduct::update');

@@ -74,6 +74,16 @@ switch ($valor) {
         <p>EL producto: <strong><?php echo $namepro?></strong> ha sido eliminado del sistema satisfactoriamente.</p>
         </div>
         </center>
+
+<?php
+    break;
+    case 4: ?>
+        <center>
+        <div class="alert alert-warning" role="alert" style="width: 40rem;">
+        <h4 class="alert-heading"><strong>ERROR!</strong></h4>
+        <p>No se puede relizar la venta, debido a que la cantidad a vender supera al stock del o los productos ingresados</p>
+        </div>
+        </center>
     <?php
     break;
 }?>

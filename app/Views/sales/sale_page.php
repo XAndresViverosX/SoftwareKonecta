@@ -64,6 +64,7 @@ crossorigin="anonymous"></script>
             <th scope="col">NombreProducto</th>
             <th scope="col">Cantidad</th>
             <th scope="col">Fecha de Venta</th>
+            <th scope="col">Precio Unitario</th>
             <th scope="col">Metodo de Pago</th>
             <th scope="col">Precio Total</th>
             </tr>
@@ -76,6 +77,7 @@ crossorigin="anonymous"></script>
                 <td><?php echo traerID($datasls['IDProduct']);?></td>
                 <td><?php echo $datasls['ProductCant']?></td>
                 <td><?php echo $datasls['CreationDate']?></td>
+                <td>$<?php echo number_format($datasls['PriceU'], 0, ",", ".");?></td>
                 <td><?php echo $datasls['WaytoPay']?></td>
                 <td>$<?php echo number_format($datasls['TotalPrice'], 0, ",", ".");?></td>
             </tr>
