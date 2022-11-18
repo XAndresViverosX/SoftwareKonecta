@@ -81,7 +81,26 @@ switch ($valor) {
         <center>
         <div class="alert alert-warning" role="alert" style="width: 40rem;">
         <h4 class="alert-heading"><strong>ERROR!</strong></h4>
-        <p>No se puede relizar la venta, debido a que la cantidad a vender supera al stock del o los productos ingresados</p>
+        <p>No se puede relizar la venta, debido a que la cantidad ingresada a vender del producto: <strong><?php echo $namepro?></strong> supera al stock actual de: <strong><?php echo $stockpro?></strong></p>
+        </div>
+        </center>
+<?php
+    break;
+    case 5: ?>
+        <center>
+        <div class="alert alert-success" role="alert" style="width: 40rem;">
+        <h4 class="alert-heading"><strong>VENTA EXITOSA!</strong></h4>
+        <p>Se realizo la venta del producto: <strong><?php echo $namepro?></strong> actualmente el producto cuenta con un stock de: <strong><?php echo $stockpro1?></strong></p>
+        </div>
+        </center>
+
+<?php
+    break;
+    case 6: ?>
+        <center>
+        <div class="alert alert-danger" role="alert" style="width: 40rem;">
+        <h4 class="alert-heading"><strong>ERROR!</strong></h4>
+        <p>El ID del producto ingresado no existe, favor de validar</p>
         </div>
         </center>
     <?php

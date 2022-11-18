@@ -26,15 +26,21 @@ class CtrSale extends Controller{
         $IDSale = random_int(1000,80000);
         $IDProduct = $request->getVar('ID');//Trae el valor que se envia del formulario de crear
         $datos['name'] = $Product->where('ID', $IDProduct)->first();
+        $validar = $Product->where('ID', $IDProduct)->first();
+        if (empty($validar)) {
+            $Validacion['valor'] = 6;
+
+        return view('products_functions/information_messages',$Validacion);
+        }else{
         $ProductCant = $request->getVar('Cant');
         $NameProduct = strval($datos['name']['NameProduct']);
         $Reference = strval($datos['name']['Reference']);
         $Price = $datos['name']['Price'];
-        $Price = intval($Price);//Comvierte todo el contenido del email en minuscula
+        $PriceU = intval($Price);//Convierte todo el contenido del email en minuscula
         $WaytoPay = strval($request->getVar('MethodPay'));
         $Stock = $datos['name']['Stock'];
         $Stock = intval($Stock);
-        $TotalPrice = $Price * $ProductCant;
+        $TotalPrice = $PriceU * $ProductCant;
         $CreationDate = date('Y-m-d');
 
         $NewStock = $Stock - $ProductCant;
@@ -44,6 +50,7 @@ class CtrSale extends Controller{
             'IDProduct'=>$IDProduct,
             'ProductCant'=>$ProductCant,
             'CreationDate'=>$CreationDate,
+            'PriceU'=>$PriceU,
             'WaytoPay'=>$WaytoPay,
             'TotalPrice'=>$TotalPrice
         ];
@@ -52,12 +59,21 @@ class CtrSale extends Controller{
             'Stock'=>$NewStock
         ];
 
-        $sales->insert($Datos);
-        $Product->update($IDProduct,$DatoStock);
+        //Condicion
+        if ($ProductCant>$Stock) {
+            $Validacion['valor'] = 4;
+        }else{
+            $sales->insert($Datos);
+            $Product->update($IDProduct,$DatoStock);
+            $Validacion['valor'] = 5;
+        };
         //Datos que se envian a la vista para comparar si mostrar o no determinada informacion por el switch case
-        $Validacion['valor'] = 4;
         $Validacion['namepro'] = $NameProduct;
-        return view('/');
+        $Validacion['stockpro'] = $Stock;
+        $Validacion['stockpro1'] = $NewStock;
+
+        return view('products_functions/information_messages',$Validacion);
+    }
     }
     
 }
