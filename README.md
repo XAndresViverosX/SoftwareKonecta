@@ -6,6 +6,7 @@ Proyecto el cual se hizo para la prueba tecnica de PHP en Konecta.
 - Framework CodeIgniter🔥
 - HTML5,PHP8, BootStrap5, DataTables
 - MySQL - XAMPP
+- Composer
 
 ## Puntos a tener en cuenta
 
@@ -14,6 +15,12 @@ Proyecto el cual se hizo para la prueba tecnica de PHP en Konecta.
 - El nombre de la Base de Datos es: **BDKonecta**.
 - Formato BD: ***utf8mb4_general_ci***.
 - El Archivo para importar las tablas esta en el repositorio: https://github.com/XAndresViverosX/SoftwareKonecta/blob/master/bdkonecta.sql
+- En dado caso surga un error como este:
+![Caso](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEidYQygKqzTPVXRt4R4lXlhxpy3MWKtqTz1ExY6mNB6QcugJaeRVEYhJSuCbIa3ea8PTlsWHGksWeKJZxuJdR45G29uwbw_pLwPGXBNS_NUL95EuHRpICZFpRZqXG9T-EwjvbYqL3SrobgeqQcAvh78z8mP-NbWkstkdo_UKZbLym340Hjkm2DbfXzS/s1600/Error.png)
+Ir a la carpeta raiz del proyecto ***C:\xampp\htdocs\SoftwareKonecta*** y ejecutar en la terminal o el cmd los siguientes comandos:
+**composer** require **codeigniter4/framework**
+**composer update**
+De esta manera el proyecto ejecutara sin problemas.
 
 ## Sentencias Solicitadas
 
