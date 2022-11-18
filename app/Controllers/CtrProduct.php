@@ -66,9 +66,16 @@ class CtrProduct extends Controller{
 
         $datos['name'] = $Product->where('ID', $id)->first();    
         $Product->where('ID', $id)->delete($id);
-        $Validacion['namepro'] = $datos['name']['NameProduct'];
-        $Validacion['valor'] = 3;
+        $validar = $Product->where('ID', $id)->first();  
+        if (!empty($validar)) {
+            $Validacion['valor'] = 7;
+
         return view('products_functions/information_messages',$Validacion);
+        }else{
+            $Validacion['namepro'] = $datos['name']['NameProduct'];
+            $Validacion['valor'] = 3;
+            return view('products_functions/information_messages',$Validacion);
+        }
     }
 
     public function edit($id=null){

@@ -103,6 +103,16 @@ switch ($valor) {
         <p>El ID del producto ingresado no existe, favor de validar</p>
         </div>
         </center>
+
+<?php
+    break;
+    case 7: ?>
+        <center>
+        <div class="alert alert-warning" role="alert" style="width: 40rem;">
+        <h4 class="alert-heading"><strong>ERROR!</strong></h4>
+        <p>El producto no puede ser borrado debido a que otra tabla hace uso de su informacion</p>
+        </div>
+        </center>
     <?php
     break;
 }?>
