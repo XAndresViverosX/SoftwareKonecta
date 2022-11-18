@@ -1,0 +1,5 @@
+-Sentencia para sacar el Producto con mayor Stock
+SELECT * FROM products WHERE Stock = (SELECT MAX(Stock) FROM products);
+
+-Sentencia para sacar el Producto mas Vendido
+SELECT * FROM sales WHERE ProductCant = (SELECT MAX(ProductCant) FROM sales); 
