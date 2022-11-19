@@ -29,7 +29,7 @@ De esta manera el proyecto ejecutara sin problemas.
  **SELECT** * **FROM** products **WHERE** Stock = (**SELECT** **MAX**(Stock) **FROM** products);
 
 - Sentencia para sacar el Producto mas Vendido:
- **SELECT** * **FROM** sales **WHERE** ProductCant = (**SELECT** **MAX**(ProductCant) **FROM** sales); 
- 
+ **SELECT** products.ID **AS** ID_Producto, products.NameProduct **AS** Nombre_Producto, products.Reference **AS** Referencia, products.Category **AS** Categoria, products.Stock, products.Price **AS** Precio_Unitario, products.CreationDate **AS** Fecha_Creacion, **SUM**(sales.ProductCant) **AS** CantidadVendida, sales.IDSale **AS** ID_Venta **FROM** sales **JOIN** products **ON** sales.IDProduct = products.ID **GROUP BY** products.ID **ORDER BY SUM**(sales.ProductCant) **DESC LIMIT** 1;
+
 
 **!Muchas Gracias por la Oportunidad!**
